@@ -30,33 +30,67 @@ document.getElementById('generate').addEventListener('click', function(){
         secondValidation = true;
     }
 
-    if (firstValidation && secondValidation) {
-    }
-    
-
     let passwordLength = length - lengthSpecial;
+    let password = '';
     let passwordSpecialCharacters = [];
     let specialCharactersPosition = [];
 
-    for(i = 0; i < lengthSpecial; i++){
-        let randomNumber = Math.random() * (18 - 0) + 0;
-        passwordSpecialCharacters.push(characters.specialCharacter[(randomNumber).toFixed()]);
-    }
-
-
-    do{
-        let randomNumber = (Math.random() * (length - 0) + 0).toFixed();
-
-        !specialCharactersPosition.includes(randomNumber) ? specialCharactersPosition.push(randomNumber) : "" ;
-
-    }while(specialCharactersPosition.length != lengthSpecial)
-
-
-    console.log(specialCharactersPosition)
-
-    for(i = 0; i < passwordLength; i++) {
-        let randomNumber = (Math.random() * (3 - 1) + 1).toFixed();;
+    if (firstValidation && secondValidation) {
         
-    }
+        if(lengthSpecial != 0){
+            // Adiciona no array todos os caracteres espciais que serão utilizados
+            for(i = 0; i < lengthSpecial; i++){
+            let randomNumber = Math.random() * (18 - 0) + 0;
+            passwordSpecialCharacters.push(characters.specialCharacter[(randomNumber).toFixed()]);
+            }
 
+            // Adiciona no array a posição que os caracteres especiais serão colocados
+            do{
+                let randomNumber = (Math.random() * ((length-1) - 0) + 0).toFixed();
+    
+                !specialCharactersPosition.includes(randomNumber) ? specialCharactersPosition.push(randomNumber) : "" ;
+    
+                
+    
+            }while(specialCharactersPosition.length != lengthSpecial)
+        }
+        // Cria a senha
+        let positionToNumber = specialCharactersPosition.map(function(str){
+            return parseInt(str);
+        })
+
+        for(i = 0; i < length; i++) {
+            if(lengthSpecial != 0){
+                let x = 0;
+                if(positionToNumber.includes(i)){
+                    password += passwordSpecialCharacters[x];
+                    passwordSpecialCharacters.shift();
+                    let index = positionToNumber.indexOf(i);
+                    positionToNumber.splice(index, 1);
+                    x++;
+                    continue;
+                }
+            }
+            
+            let randomNumber = (Math.random() * (3 - 1) + 1).toFixed();
+
+            if(randomNumber == 1){
+                let randomNumber = (Math.random() * (25 - 0) + 0).toFixed();
+                password += characters.upperCase[randomNumber]
+                continue;
+
+            } else if(randomNumber == 2){
+                let randomNumber = (Math.random() * (25 - 0) + 0).toFixed();
+                password += characters.lowerCase[randomNumber]
+                continue;
+
+            } else if(randomNumber == 3){
+                let randomNumber = (Math.random() * (9 - 0) + 0).toFixed();
+                password += characters.numbers[randomNumber]
+                continue;
+
+            }
+            
+        }
+    }
 });
