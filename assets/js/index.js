@@ -1,7 +1,9 @@
-const upperCase = 'abcdefghijklmnopqrstuvwxyz'
-const lowerCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-const numbers = '0123456789'
-const specialCaracter = '!@#$%&*()-=_+[]?/;:'
+const characters = {
+    upperCase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    lowerCase: 'abcdefghijklmnopqrstuvwxyz',
+    numbers: '0123456789',
+    specialCharacter: '!@#$%&*()-=_+[]?/;:'
+};
 
 document.getElementById('generate').addEventListener('click', function(){
     let length = (document.getElementById('length').value) * 1;
@@ -13,7 +15,7 @@ document.getElementById('generate').addEventListener('click', function(){
     let secondValidation = false;
 
     if(length < 10 || length > 25){
-        errorLength.classList.remove("hidden"); // NÃO BATEU COM OS DADOS ESPERADOS
+        errorLength.classList.remove("hidden");
         firstValidation = false;
     } else {
         errorLength.classList.add("hidden");
@@ -21,7 +23,7 @@ document.getElementById('generate').addEventListener('click', function(){
     }
 
     if(lengthSpecial < 0 || lengthSpecial > 7){
-        errorSpecialCase.classList.remove("hidden"); // NÃO BATEU COM OS DADOS ESPERADOS
+        errorSpecialCase.classList.remove("hidden"); 
         secondValidation = false;
     } else {
         errorSpecialCase.classList.add("hidden");
@@ -29,12 +31,32 @@ document.getElementById('generate').addEventListener('click', function(){
     }
 
     if (firstValidation && secondValidation) {
-        console.log("PASSOU EM TUDO")
+    }
+    
+
+    let passwordLength = length - lengthSpecial;
+    let passwordSpecialCharacters = [];
+    let specialCharactersPosition = [];
+
+    for(i = 0; i < lengthSpecial; i++){
+        let randomNumber = Math.random() * (18 - 0) + 0;
+        passwordSpecialCharacters.push(characters.specialCharacter[(randomNumber).toFixed()]);
     }
 
 
+    do{
+        let randomNumber = (Math.random() * (length - 0) + 0).toFixed();
 
-    // VALIDAR SE OS DADOS BATEM COM OS ESPERADOS
-    // SE BATER AI VAI GERAR A SENHA
+        !specialCharactersPosition.includes(randomNumber) ? specialCharactersPosition.push(randomNumber) : "" ;
+
+    }while(specialCharactersPosition.length != lengthSpecial)
+
+
+    console.log(specialCharactersPosition)
+
+    for(i = 0; i < passwordLength; i++) {
+        let randomNumber = (Math.random() * (3 - 1) + 1).toFixed();;
+        
+    }
 
 });
