@@ -17,17 +17,21 @@ document.getElementById('generate').addEventListener('click', function(){
 
     if(length < 10 || length > 25){
         errorLength.classList.remove("hidden");
+        errorLength.classList.add("alert");
         firstValidation = false;
     } else {
         errorLength.classList.add("hidden");
+        errorLength.classList.remove("alert");
         firstValidation = true;
     }
 
     if(lengthSpecial < 0 || lengthSpecial > 7){
         errorSpecialCase.classList.remove("hidden"); 
+        errorSpecialCase.classList.add("alert");
         secondValidation = false;
     } else {
         errorSpecialCase.classList.add("hidden");
+        errorSpecialCase.classList.remove("alert"); 
         secondValidation = true;
     }
 
