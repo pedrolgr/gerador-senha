@@ -10,6 +10,7 @@ document.getElementById('generate').addEventListener('click', function(){
     let lengthSpecial = (document.getElementById('lengthSpecial').value) * 1;
     const errorLength = document.getElementById('error-length');
     const errorSpecialCase = document.getElementById('error-special-case');
+    const result = document.getElementById('result');
     
     let firstValidation = false;
     let secondValidation = false;
@@ -92,5 +93,8 @@ document.getElementById('generate').addEventListener('click', function(){
             }
             
         }
+
+        result.appendChild(document.getElementById('password').innerHTML = (password));
     }
 });
+

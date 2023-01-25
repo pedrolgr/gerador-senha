@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Comfortaa', cursive;
+}
+
+body {
+    background: rgb(0,60,156);
+    background: linear-gradient(83deg, rgba(0,60,156,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 .container{
@@ -11,10 +19,93 @@
 .content {
     border: 1px solid black;
     width: 40%;
-    height: 400px;
+    height: 550px;
     margin: 200px auto;
+    
+    background: rgba( 255, 255, 255, 0.65 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.main {
+    width: 100%;
+    height: 100%;
 }
 
 .hidden {
     display: none;
+}
+
+.text {
+    margin-top: 30px;
+    text-align: center;
+}
+
+h2, p{
+    margin-bottom: 15px;
+}
+
+p, span{
+    color: rgb(92, 91, 91);
+}
+
+.input {
+    display: block;
+    margin: 0 auto;
+
+    border: none;
+    font-size: 30px;
+    text-align: center;
+    width: 90px;
+    height: 50px;
+
+    box-shadow: 2px 2px 4px #979595;
+    border-radius: 3px;
+}
+
+.input-error {
+    background-color: rgb(243, 111, 111);
+    border: 1px solid rgb(243, 111, 111);
+}
+
+.inputs{
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-field {
+    margin-top: 50px;
+}
+
+#generate {
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px #979595;
+    font-weight: bold;
+    
+    cursor: pointer;
+}
+
+#result {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 35px;
+}
+
+#icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 15px;
 }

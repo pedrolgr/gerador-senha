@@ -5,30 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
     <title>Gerador de Senha</title>
 </head>
 <body>
     <main>
         <div class="container">
             <div class="content">
-                <h1>Gerador de Senhas</h1>
-
-                <div class="input-field">
-                    <h2>Qual o tamanho da sua senha?</h2>
-                    <p>Mínimo de 10 caracteres e máximo de 25</p>
-                    <input type="number" name="length" id="length" min="10" max="25" required>
-                    <span id="error-length" class="hidden">Por favor, escolha no mínimo 10 caracteres e no máximo 25</span>
+                <h1 class="text">Gerador de Senhas</h1>
+                <div class="inputs">
+                    <div class="input-field">
+                        <h2 class="text">Qual o tamanho da sua senha?</h2>
+                        <p class="text">Mínimo de 10 caracteres e máximo de 25</p>
+                        <input name="length" class="input" id="length"  min="10" max="25" required value="10">
+                        <span id="error-length" class="hidden">Por favor, escolha no mínimo 10 caracteres e no máximo 25</span>
+                    </div>
+                    <div class="input-field">
+                        <h2 class="text">Quantos caracteres especiais?</h2>
+                        <p class="text">Mínimo de 0 caracteres e máximo de 7</p>
+                        <input name="lengthSpecial" class="input" min="0"  id="lengthSpecial" max="7" required value="0">
+                        <span id="error-special-case" class="hidden">Por favor, escolha no mínimo 0 caracteres e no máximo 7</span>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <h2>Quantos caracteres especiais?</h2>
-                    <p>Mínimo de 0 caracteres e máximo de 7</p>
-                    <input type="number" name="lengthSpecial" min="0" id="lengthSpecial" max="7" required>
-                    <span id="error-special-case" class="hidden">Por favor, escolha no mínimo 0 caracteres e no máximo 7</span>
-                </div>
-                <button id="generate">Submit</button>
+                <button id="generate"> Submit</button>
 
-                <div id="result">
-                    
+                <div id="result"> 
+                    <div id="password">A</div> 
+                    <!--<div id="copy" class="hidden"><button id="icon-button"><i class="fa-regular fa-copy fa-2x"></i></button></div>-->
                 </div>
             </div>
 
