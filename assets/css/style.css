@@ -7,11 +7,11 @@
 }
 
 body {
-    background: rgb(0,60,156);
-    background: linear-gradient(83deg, rgba(0,60,156,1) 0%, rgba(255,255,255,1) 100%);
-    
+    background-image: url(../img/background.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color: white;
 }
 
 .container{
@@ -20,16 +20,15 @@ body {
 }
 
 .content {
-    border: 1px solid black;
     width: 40%;
     min-width: 593px;
     height: 580px;
     margin: 100px auto;
     
-    background: rgba( 255, 255, 255, 0.65 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 10.5px );
-    -webkit-backdrop-filter: blur( 10.5px );
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 9.5px );
+    -webkit-backdrop-filter: blur( 9.5px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
@@ -59,7 +58,7 @@ h2, p{
 }
 
 p, span{
-    color: rgb(92, 91, 91);
+    color: rgb(255, 255, 255);
 }
 
 .input {
@@ -72,7 +71,7 @@ p, span{
     width: 90px;
     height: 50px;
 
-    box-shadow: 2px 2px 4px #979595;
+    box-shadow: 2px 2px 4px #000000;
     border-radius: 3px;
 }
 
@@ -94,12 +93,13 @@ p, span{
     display: block;
     margin: 0 auto;
     margin-top: 60px;
-    width: 100px;
-    height: 30px;
+    width: 120px;
+    height: 40px;
     border: none;
     border-radius: 3px;
-    box-shadow: 2px 2px 4px #979595;
+    box-shadow: 2px 2px 4px #000000;
     font-weight: bold;
+    font-size: 17px;
     
     cursor: pointer;
 }
@@ -118,6 +118,10 @@ p, span{
     border: none;
     cursor: pointer;
     margin-left: 15px;
+}
+
+#password {
+  text-shadow: 2px 2px 4px #000000;
 }
 
 
