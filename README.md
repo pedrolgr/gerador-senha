@@ -6,4 +6,4 @@
  
  
 # Aplicação: 
-![alt text](https://github.com/pedrolgr/gerador-senha/blob/main/assets/Print%20Gerador%20Senha.png)
+![Imagem da aplicação gerador de senha](https://github.com/pedrolgr/gerador-senha/blob/main/assets/img/deploy-gerador-senha.png)
